@@ -1,0 +1,22 @@
+<center>
+ 
+<h1>Enroll Course</h1>
+
+<%= form_with model: @emrollment do |form| %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.collection_select :course_id,Course.all, :id, :title  %><br><br>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.collection_select :course_id, Course.all, :id, :price  %><br><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
+</center>

@@ -1,0 +1,12 @@
+<h1>Learning Platform</h1>
+<%= render "shared/header" %>
+
+<% if user_signed_in? %>
+  <div>Welcome <%= current_user.email%></div><br>
+  <%= button_to 'Signout', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to 'Sign in', new_user_session_path %>
+<% end %>
+
+
+

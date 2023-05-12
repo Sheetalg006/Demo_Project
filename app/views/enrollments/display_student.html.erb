@@ -1,0 +1,24 @@
+<center>
+  <h1>Enrolled Students<h1>
+  <table border ="2px" align="center">
+
+    <thead>
+      <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Course Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.user.name %></td>
+       <td><%= enrollment.user.email %></td>
+        <td><%= enrollment.course.title %></td>
+      </tr>  
+      <% end %> 
+    </tbody>
+  </table>
+
+</center>

@@ -1,0 +1,27 @@
+<center>
+<h1>All Courses</h1>
+
+  <table border ="2px" align="center">
+
+    <thead>
+      <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Booking</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.price %></td>
+        <td><%=link_to 'Enroll',new_enrollment_path(course) %></td>
+       <% end %> 
+    </tbody>
+
+  </table>
+  <%= button_to 'SignOut',destroy_user_session_path, method: :delete %>
+</center>

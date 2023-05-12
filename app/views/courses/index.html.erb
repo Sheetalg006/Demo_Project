@@ -1,0 +1,38 @@
+<center>
+<h1>All Course Details</h1>
+
+<%= link_to 'Create New Course',new_course_path %><br><br>
+  <table border ="2px" align="center">
+
+    <thead>
+      <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Student Details </th>
+      <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.price %></td>
+        <td><%= link_to 'All Students Errolled', enrollments_path %></td>
+        <td><%= link_to 'Edit',edit_course_path(course) %></td>
+        <td><%= link_to 'View',course_path(course) %></td>
+        <td><%= link_to 'Delete', course_path(course), data: {turbo_method: :delete,
+          turbo_confirm: "Are you sure?"} %>
+        </td>
+      </tr>  
+      <% end %> 
+    </tbody>
+
+  </table>
+  <div>
+   <%= button_to 'SignOut',destroy_user_session_path, method: :delete %><br>
+
+   </div>
+</center>

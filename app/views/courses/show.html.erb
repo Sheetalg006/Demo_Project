@@ -1,0 +1,17 @@
+<center>
+  <%= form_with model: @course do |form| %>
+  <div>
+    <div>
+      <p><strong>Title: </strong><%= @course.title %></p>
+      <p><strong>Description: </strong><%= @course.description %></p>
+      <p><strong>Price: </strong><%= @course.price %></p>
+    </div>
+ 
+  </div>
+  <div >
+    <%= link_to 'Back to course', courses_path %>
+    <%= link_to 'Edit course', edit_course_path(@course) %>
+  </div>
+
+  <% end %>
+</center>

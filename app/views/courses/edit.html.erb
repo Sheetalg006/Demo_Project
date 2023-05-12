@@ -1,0 +1,27 @@
+<center>
+<h1>Edit Course </h1>
+<%= form_with model: @course do |form| %>
+
+<div>
+<%= form.label :title %>
+<%= form.text_field :title %><br>
+</div>
+
+<div>
+<%= form.label :description %>
+<%= form.text_field :description %><br>
+</div>
+
+<div>
+<%= form.label :price %>
+<%= form.text_field :price %>
+</div>
+
+<div>
+<%= form.submit %>
+<%= link_to 'Back To Course',courses_path %>
+</div>
+
+<% end %>
+
+</center>
